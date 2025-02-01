@@ -356,7 +356,7 @@ export class UsersService extends ItemsService {
 
 			// Send invite for new and already invited users
 			if (isEmpty(user) || user.status === 'invited') {
-				const subjectLine = subject ?? "You've been invited";
+				const subjectLine = subject ?? "Haz sido invitado a nuestro equipo";
 
 				mailService
 					.send({
@@ -482,7 +482,7 @@ export class UsersService extends ItemsService {
 			mailService
 				.send({
 					to: input.email,
-					subject: 'Verify your email address', // TODO: translate after theres support for internationalized emails
+					subject: 'Vertifica tu correo electrónico', // TODO: translate after theres support for internationalized emails
 					template: {
 						name: 'user-registration',
 						data: {
@@ -548,7 +548,7 @@ export class UsersService extends ItemsService {
 			.setQuery('token', token)
 			.toString();
 
-		const subjectLine = subject ? subject : 'Password Reset Request';
+		const subjectLine = subject ? subject : 'Petición para reestablecer tu contraseña';
 
 		mailService
 			.send({
